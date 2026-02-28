@@ -159,3 +159,10 @@ SmartStudent-AI/
 ```
 
 ---
+### Technical Approach
+
+- **Retrieval-Augmented Generation (RAG):** Retrieves external documents and contextual data to enhance response relevance and depth.
+- **Multi-Provider LLM Integration:** Simple switching between OpenAI, Groq, Gemini, and Gemma using unified APIs.
+- **Robust Error Handling:** Detects quota overruns, invalid keys, and model misconfigurations for seamless user experience.
+
+---
