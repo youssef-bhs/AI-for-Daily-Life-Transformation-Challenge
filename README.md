@@ -1,152 +1,179 @@
-SmartStudent AI
+# SmartStudent AI
 
-AI for Daily Life Transformation Challenge
-Target Audience: Students
+**AI for Daily Life Transformation Challenge**
 
-Overview
+## Overview
 
-SmartStudent AI is a student-focused web application designed to assist students in their academic and daily lives. The platform combines Retrieval-Augmented Generation (RAG) with Large Language Models (LLMs) to provide intelligent support in:
+**SmartStudent AI** is a web application designed specifically for students, assisting them in both academic pursuits and daily life. The platform leverages Retrieval-Augmented Generation (RAG) in combination with large language models (LLMs) to provide intelligent support across key domains:
 
-Study planning and exam preparation
+- **Study Planning and Exam Preparation**
+- **Budget Optimization (Tunisian Dinar – TND)**
+- **Academic Stress Management**
 
-Budget optimization (in Tunisian Dinar – TND)
+The system offers seamless integration with several LLM providers, including OpenAI, Groq, Gemini, and Gemma. The frontend features a modern React interface, complete with a floating chatbot for real-time assistance.
 
-Academic stress management
+---
 
-The system supports multiple LLM providers, including OpenAI, Groq, and Gemini/Gemma, and features a modern React interface with a floating chatbot for real-time assistance.
+## Key Features
 
-Key Features
-AI Chatbot
+### AI Chatbot
 
-Provides contextual and accurate responses to student questions using RAG-enhanced LLMs.
+- Contextual and accurate responses to student queries using RAG-enhanced LLMs.
 
-RAG-Powered Backend
+### RAG-Powered Backend
 
-Retrieves relevant documents and injects contextual knowledge into AI responses to improve accuracy and relevance.
+- Retrieves relevant documents and injects contextual knowledge into AI responses, enhancing both accuracy and relevance.
 
-Multi-Provider LLM Support
+### Multi-Provider LLM Support
 
-Easily switch between:
+- Effortless switching between major providers:
+  - OpenAI
+  - Groq
+  - Gemini
+  - Gemma
 
-OpenAI
+### Budget Optimizer (TND)
 
-Groq
+- Analyze monthly income and expenses in Tunisian Dinar (TND)
+- Identify unnecessary spending
+- Discover potential savings
+- Receive personalized financial recommendations
 
-Gemini
+### Modern Frontend
 
-Gemma
+- Developed using React
+- Floating chatbot interface
+- Interactive budget planning tools
 
-Budget Optimizer (TND)
+### Comprehensive Error Handling
 
-Analyze monthly income and expenses in Tunisian Dinar (TND) to:
+- Robust management of:
+  - API errors
+  - Invalid model configurations
+  - Quota and rate limit issues
 
-Identify unnecessary spending
+---
 
-Discover potential savings
+## Important Gemini Integration Note
 
-Receive personalized financial recommendations
+If you select Gemini as the active model, ensure you update the Gemini API key:
 
-Modern Frontend
+1. Generate a valid Gemini API key.
+2. Add it to `backend/.env`.
+3. Restart the backend server.
 
-Built with React
+The previously used API key was declined due to security restrictions.
 
-Floating chatbot interface
+---
 
-Interactive budget planning tools
+## Architecture Overview
 
-Error Handling
+### Backend (FastAPI – Python)
 
-Robust handling of:
+- Loads API keys and model configuration from `.env`
+- Implements RAG modules for document retrieval and embeddings
+- Integrates selected LLM provider for response generation
+- Exposes REST endpoints for chat and budget analysis
 
-API errors
+### Frontend (React)
 
-Invalid model configurations
+- Floating AI chatbot for immediate interaction
+- Budget optimizer interface (default currency: TND)
+- Integrates with backend APIs
 
-Quota and rate limit issues
+---
 
-Important Note
+## Installation and Setup
 
-The Gemini API key must be updated before use.
+### 1. Clone the Repository
 
-The previously added API key was declined due to security restrictions. To enable Gemini models:
-
-Generate a valid Gemini API key.
-
-Add it to the backend/.env file.
-
-Restart the backend server.
-
-Architecture Overview
-Backend (FastAPI – Python)
-
-Loads API keys and model configuration from .env
-
-Implements RAG modules for document retrieval and embeddings
-
-Integrates the selected LLM provider for response generation
-
-Exposes REST endpoints for chat and budget analysis
-
-Frontend (React)
-
-Floating AI chatbot for instant interaction
-
-Budget optimizer interface (default currency: TND)
-
-API integration with backend services
-
-Installation and Setup
-1. Clone the Repository
+```bash
 git clone <your-repository-url>
 cd SmartStudent-AI
-2. Install Dependencies
-Backend
+```
+
+### 2. Install Dependencies
+
+#### Backend
+
+```bash
 pip install -r backend/requirements.txt
-Frontend
+```
+
+#### Frontend
+
+```bash
 cd frontend
 npm install
-3. Configure Environment Variables
+```
 
-Create or update backend/.env using the example file:
+### 3. Configure Environment Variables
 
-backend/.env.example
+Create or update the `backend/.env` file using the provided example:
+
+```bash
+cp backend/.env.example backend/.env
+```
 
 Add your LLM provider API keys:
 
+```
 OPENAI_API_KEY=your_key
 GROQ_API_KEY=your_key
 GEMINI_API_KEY=your_key
+```
 
-Ensure the Gemini key is valid if selecting Gemini as the active model.
+Ensure the Gemini key is valid if you plan to use Gemini as the active model.
 
-4. Run the Application
-Start Backend
+### 4. Run the Application
+
+#### Start Backend
+
+```bash
 cd backend
 python main.py
-Start Frontend
+```
+
+#### Start Frontend
+
+```bash
 cd frontend
 npm start
-5. Access the Application
+```
 
-Open your browser and navigate to:
+### 5. Access the Application
 
-http://localhost:3000
-Project Structure
+Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Project Structure
+
+```
 SmartStudent-AI/
 │
 ├── backend/        # FastAPI server, RAG modules, LLM client, routers, services
 ├── frontend/       # React application, chatbot UI, budget optimizer
 ├── demo/           # Demo scenarios and sample data
 └── README.md
-Example Usage
+```
 
-Ask the chatbot:
-"Comment préparer mes examens efficacement ?"
+---
 
-Use the Budget Optimizer:
+## Example Usage
 
-Set monthly income to 300 TND
+### Chatbot Queries
 
-Add expenses
+- *Comment préparer mes examens efficacement ?*
 
-Analyze savings and recommendations
+### Budget Optimizer
+
+- Set monthly income to **300 TND**  
+- Add expenses  
+- Analyze savings and recommendations  
+
+---
+
+## License
+
+This project is intended for educational and demonstration purposes.
