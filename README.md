@@ -159,21 +159,3 @@ SmartStudent-AI/
 ```
 
 ---
-
-## Example Usage
-
-### Chatbot Queries
-
-- *Comment préparer mes examens efficacement ?*
-
-### Budget Optimizer
-
-- Set monthly income to **300 TND**  
-- Add expenses  
-- Analyze savings and recommendations  
-
----
-
-## License
-
-This project is intended for educational and demonstration purposes.
