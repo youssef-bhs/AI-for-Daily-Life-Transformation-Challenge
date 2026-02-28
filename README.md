@@ -46,8 +46,3 @@ SmartStudent AI is a student-focused web application that leverages Retrieval-Au
 - Ask the chatbot: "Comment préparer mes examens efficacement ?"
 - Use the budget optimizer: Set monthly income to 300 TND and add expenses to analyze your budget.
 
-## Authors
-- Project by [Your Name]
-
-## License
-MIT
