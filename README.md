@@ -1,83 +1,152 @@
-AI for Daily Life Transformation Challenge
+SmartStudent AI
 
+AI for Daily Life Transformation Challenge
 Target Audience: Students
 
-SmartStudent AI Hackathon Project
-Description
+Overview
 
-SmartStudent AI is a student-focused web application that leverages Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) to help students with study planning, budget optimization (in Tunisian Dinar - TND), and academic stress management. The project supports multiple LLM providers (OpenAI, Groq, Gemini/Gemma) and features a floating chatbot UI for instant assistance.
+SmartStudent AI is a student-focused web application designed to assist students in their academic and daily lives. The platform combines Retrieval-Augmented Generation (RAG) with Large Language Models (LLMs) to provide intelligent support in:
 
-Features
+Study planning and exam preparation
 
-AI Chatbot: Answers student questions on study strategies, budgeting, and stress management using RAG and LLMs.
+Budget optimization (in Tunisian Dinar – TND)
 
-RAG Backend: Retrieves relevant documents and injects context for more accurate answers.
+Academic stress management
 
-Multi-Provider LLM Support: Easily switch between OpenAI, Groq, Gemini, and Gemma models.
+The system supports multiple LLM providers, including OpenAI, Groq, and Gemini/Gemma, and features a modern React interface with a floating chatbot for real-time assistance.
 
-Budget Optimizer: Analyze monthly income and expenses in TND, discover savings, and get personalized advice.
+Key Features
+AI Chatbot
 
-Frontend: Modern React UI with a floating chatbot and interactive budget planner.
+Provides contextual and accurate responses to student questions using RAG-enhanced LLMs.
 
-Error Handling: Robust feedback for API/model issues and quota limits.
+RAG-Powered Backend
+
+Retrieves relevant documents and injects contextual knowledge into AI responses to improve accuracy and relevance.
+
+Multi-Provider LLM Support
+
+Easily switch between:
+
+OpenAI
+
+Groq
+
+Gemini
+
+Gemma
+
+Budget Optimizer (TND)
+
+Analyze monthly income and expenses in Tunisian Dinar (TND) to:
+
+Identify unnecessary spending
+
+Discover potential savings
+
+Receive personalized financial recommendations
+
+Modern Frontend
+
+Built with React
+
+Floating chatbot interface
+
+Interactive budget planning tools
+
+Error Handling
+
+Robust handling of:
+
+API errors
+
+Invalid model configurations
+
+Quota and rate limit issues
 
 Important Note
 
-⚠️ The Gemini API key needs to be updated. The key that was previously added was declined due to security restrictions. To run the project successfully with Gemini, you must generate and configure a valid API key in the backend/.env file.
+The Gemini API key must be updated before use.
 
-How It Works
+The previously added API key was declined due to security restrictions. To enable Gemini models:
 
-Backend (FastAPI, Python)
+Generate a valid Gemini API key.
 
-Loads API keys and model selection from .env.
+Add it to the backend/.env file.
 
-RAG modules retrieve and embed documents for context-aware answers.
+Restart the backend server.
 
-Chat endpoint integrates LLM responses and sources.
+Architecture Overview
+Backend (FastAPI – Python)
+
+Loads API keys and model configuration from .env
+
+Implements RAG modules for document retrieval and embeddings
+
+Integrates the selected LLM provider for response generation
+
+Exposes REST endpoints for chat and budget analysis
 
 Frontend (React)
 
-Floating chatbot UI for instant Q&A.
+Floating AI chatbot for instant interaction
 
-Budget optimizer with TND as default currency.
+Budget optimizer interface (default currency: TND)
 
-API integration for chat and budget analysis.
+API integration with backend services
 
-Setup & Usage
+Installation and Setup
+1. Clone the Repository
+git clone <your-repository-url>
+cd SmartStudent-AI
+2. Install Dependencies
+Backend
+pip install -r backend/requirements.txt
+Frontend
+cd frontend
+npm install
+3. Configure Environment Variables
 
-Install dependencies
+Create or update backend/.env using the example file:
 
-Backend: pip install -r backend/requirements.txt
+backend/.env.example
 
-Frontend: cd frontend && npm install
+Add your LLM provider API keys:
 
-Configure API keys
+OPENAI_API_KEY=your_key
+GROQ_API_KEY=your_key
+GEMINI_API_KEY=your_key
 
-Add your LLM provider keys to backend/.env (see example in .env.example).
+Ensure the Gemini key is valid if selecting Gemini as the active model.
 
-Make sure to update the Gemini API key if you plan to use Gemini models.
+4. Run the Application
+Start Backend
+cd backend
+python main.py
+Start Frontend
+cd frontend
+npm start
+5. Access the Application
 
-Run the project
+Open your browser and navigate to:
 
-Backend: cd backend && python main.py
-
-Frontend: cd frontend && npm start
-
-Access the app
-
-Open http://localhost:3000
- in your browser.
-
-File Structure
-
-backend/ - FastAPI server, RAG modules, LLM client, routers, services
-
-frontend/ - React app, chatbot UI, budget optimizer
-
-demo/ - Demo scenarios and sample data
-
+http://localhost:3000
+Project Structure
+SmartStudent-AI/
+│
+├── backend/        # FastAPI server, RAG modules, LLM client, routers, services
+├── frontend/       # React application, chatbot UI, budget optimizer
+├── demo/           # Demo scenarios and sample data
+└── README.md
 Example Usage
 
-Ask the chatbot: "Comment préparer mes examens efficacement ?"
+Ask the chatbot:
+"Comment préparer mes examens efficacement ?"
 
-Use the budget optimizer: Set monthly income to 300 TND and add expenses to analyze your budget.
+Use the Budget Optimizer:
+
+Set monthly income to 300 TND
+
+Add expenses
+
+Analyze savings and recommendations
